@@ -54,7 +54,7 @@ var ArrayListRooms = [
         price: '90€'
     },
 
-]
+];
 
 var showListRooms = (req,res) => {
     console.log(req.body)
