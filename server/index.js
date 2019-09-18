@@ -21,16 +21,51 @@ const showHelloMessage = (req, res) => {
         message: 'hello',
         author: 'richard'
     });
-
-    res.send({
-        room: '103',
-        state: 'available'
-
-    });
 };
 
+const showRoomState = (req, res) => {
+    console.log(req.body);
+        res.send({
+            room: '103',
+            state: 'available'
+    
+        });
+}
+
+var ArrayListRooms = [
+    {
+        room: '101',
+        price: '50€'
+    },
+    {
+        room: '102',
+        price: '60€'
+    },
+    {
+        room: '103',
+        price: '70€'
+    },
+    {
+        room: '104',
+        price: '80€'
+    },
+    {
+        room: '105',
+        price: '90€'
+    },
+
+]
+
+var showListRooms = (req,res) => {
+    console.log(req.body)
+    res.send(ArrayListRooms);
+
+}
+
+
 app.get("/hello", showHelloMessage);
-app.get("/103", showHelloMessage);
+app.get("/103", showRoomState);
+app.get("/listRooms", showListRooms);
 
 app.get("/goodbye", (req, res) => {
     res.send({
